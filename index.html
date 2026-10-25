@@ -1,11 +1,145 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0e0b14">
+
+  <title>Twitch Progress 💜</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" defer></script>
+  <script src="./script.js" defer></script>
 </head>
+
 <body>
-    <H1>kakou kakou</H1>
+  <main class="container">
+
+    <header class="header">
+      <div>
+        <p class="eyebrow">✦ TWITCH PROGRESS</p>
+        <h1>Mon évolution<span>.</span></h1>
+        <p class="subtitle">
+          Chaque stream compte. Chaque progrès aussi. 💜
+        </p>
+      </div>
+      <div class="header-icon">✦</div>
+    </header>
+
+    <!-- GRAPHIQUE PRINCIPAL -->
+    <section class="dashboard">
+      <div class="chart-header">
+        <div>
+          <p class="eyebrow">STATISTIQUES TWITCH</p>
+          <h2>Ma progression</h2>
+          <p id="period" class="period"></p>
+        </div>
+        <span class="status">✦ Depuis mars 2026</span>
+      </div>
+
+      <div id="legend" class="legend"></div>
+
+      <div class="chart-container main-chart">
+        <canvas id="progressChart"></canvas>
+      </div>
+
+      <p class="chart-note">
+        Clique sur une statistique pour afficher ou masquer sa courbe.
+      </p>
+    </section>
+
+    <!-- GRAPHIQUES INDIVIDUELS -->
+    <div class="section-title">
+      <p class="eyebrow">MES OBJECTIFS</p>
+      <h2>Chaque étape compte ✨</h2>
+    </div>
+
+    <div class="goals-grid">
+
+      <section class="dashboard goal-card">
+        <div class="goal-header">
+          <div>
+            <p class="eyebrow">COMMUNAUTÉ</p>
+            <h3>Followers totaux</h3>
+          </div>
+          <span class="goal-icon">♡</span>
+        </div>
+
+        <div class="goal-value">
+          <strong id="followersValue">—</strong>
+          <span>/ 1 000 followers</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="followersBar" class="progress-fill"></div>
+        </div>
+
+        <div class="chart-container small-chart">
+          <canvas id="followersChart"></canvas>
+        </div>
+        <p class="chart-note">
+          Historique estimé à partir des nouveaux followers.
+        </p>
+      </section>
+
+      <section class="dashboard goal-card">
+        <div class="goal-header">
+          <div>
+            <p class="eyebrow">MONÉTISATION</p>
+            <h3>Revenus mensuels</h3>
+          </div>
+          <span class="goal-icon">€</span>
+        </div>
+
+        <div class="goal-value">
+          <strong id="revenusValue">—</strong>
+          <span>/ 50 €</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="revenusBar" class="progress-fill"></div>
+        </div>
+
+        <div class="chart-container small-chart">
+          <canvas id="revenusChart"></canvas>
+        </div>
+        <p class="chart-note">Objectif : 50 € par mois.</p>
+      </section>
+
+      <section class="dashboard goal-card viewers-card">
+        <div class="goal-header">
+          <div>
+            <p class="eyebrow">AUDIENCE</p>
+            <h3>Spectateurs moyens</h3>
+          </div>
+          <span class="goal-icon">◉</span>
+        </div>
+
+        <div class="goal-value">
+          <strong id="viewersValue">—</strong>
+          <span>spectateurs en moyenne</span>
+        </div>
+
+        <div class="viewers-objectives">
+          <span>🎯 Court terme : 20</span>
+          <span>✦ Long terme : 75</span>
+        </div>
+
+        <div class="chart-container small-chart">
+          <canvas id="viewersChart"></canvas>
+        </div>
+        <p class="chart-note">
+          Objectifs personnels de progression.
+        </p>
+      </section>
+
+    </div>
+
+    <footer>
+      Fait avec 💜 pour célébrer chaque petit progrès.
+    </footer>
+
+  </main>
 </body>
 </html>
